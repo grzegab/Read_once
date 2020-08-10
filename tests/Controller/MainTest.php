@@ -3,7 +3,10 @@
 namespace App\Tests\Controller;
 
 use App\Controller\Main;
+use App\Repository\MessageRepository;
+use Error;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
@@ -15,13 +18,15 @@ class MainTest extends TestCase
         $twig = $this->createMock(Environment::class);
         $twig->method('render')->willReturn('<p>HTML</p>');
 
-        $controller = new Main($twig);
+        $messageRepository = $this->createMock(MessageRepository::class);
+
+        $controller = new Main($twig, $messageRepository);
         $desc = $controller->readMessage('cebf0224-5f8d-4e26-a212-16b46600b983');
 
         self::assertNotEmpty($desc->getContent());
-        self::assertSame(Response::HTTP_OK, $desc->getStatusCode());
+        self::assertSame(Response::HTTP_NOT_FOUND, $desc->getStatusCode());
 
-        $controller = new Main($twig);
+        $controller = new Main($twig, $messageRepository);
         $descEmpty = $controller->readMessage('123');
 
         self::assertNotEmpty($descEmpty->getContent());
@@ -33,8 +38,12 @@ class MainTest extends TestCase
         $twig = $this->createMock(Environment::class);
         $twig->method('render')->willReturn('<p>HTML</p>');
 
-        $controller = new Main($twig);
-        $desc = $controller->createMessage();
+        $messageRepository = $this->createMock(MessageRepository::class);
+        $request = $this->createMock(Request::class);
+
+        $this->expectException(Error::class);
+        $controller = new Main($twig, $messageRepository);
+        $desc = $controller->createMessage($request);
 
         self::assertNotEmpty($desc->getContent());
         self::assertSame(Response::HTTP_OK, $desc->getStatusCode());
@@ -45,7 +54,9 @@ class MainTest extends TestCase
         $twig = $this->createMock(Environment::class);
         $twig->method('render')->willReturn('<p>HTML</p>');
 
-        $controller = new Main($twig);
+        $messageRepository = $this->createMock(MessageRepository::class);
+
+        $controller = new Main($twig, $messageRepository);
         $desc = $controller->description();
 
         self::assertNotEmpty($desc->getContent());
