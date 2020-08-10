@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="feat(master): add main controller for app with tests">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Main.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Main/create.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Main/description.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Main/read.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Controller/MainTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Read_once.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Read_once.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Entity/Message.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Forms/MessageForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/MessageRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Errors/404.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Main/saved.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Main/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Main/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Main/read.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Main/read.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,12 +55,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Main" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -82,6 +82,10 @@
       <command value="docker exec once_php ./bin/phpunit" />
       <command value="docker-compose run once_composer ./bin/phpunit" />
       <command value="docker-compose run --rm once_composer ./bin/phpunit" />
+      <command value="docker exec once_php php bin/console doctrine:migrations:diff" />
+      <command value="docker exec once_php php bin/console doctrine:migrations:migrate" />
+      <command value="docker exec once_php php bin/console doctrine:migrations:migrate -q" />
+      <command value="docker-compose run --rm once_composer require symfony/polyfill-uuid" />
     </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -94,7 +98,7 @@
       <updated>1597040350976</updated>
       <workItem from="1597040352786" duration="2026000" />
       <workItem from="1597042400784" duration="273000" />
-      <workItem from="1597042700236" duration="12389000" />
+      <workItem from="1597042700236" duration="19367000" />
     </task>
     <task id="LOCAL-00001" summary="build(master): updated symfony to 4.4 and added docker compose">
       <created>1597048627495</created>
@@ -117,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597055625321</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat(master): add main controller for app with tests">
+      <created>1597055976871</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597055976871</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,36 +150,53 @@
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="373" y="488" key="#SQL_Dialects/0.23.2048.1257@0.23.2048.1257" timestamp="1597045066708" />
-    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2" timestamp="1597055946732">
+    <state x="624" y="317" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597059650647">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="624" y="317" key="#com.intellij.execution.impl.EditConfigurationsDialog/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597059650646" />
+    <state x="837" y="374" key="#com.intellij.ide.util.MemberChooser" timestamp="1597061303049">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="837" y="374" key="#com.intellij.ide.util.MemberChooser/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597061303049" />
+    <state x="762" y="413" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597061294859">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="762" y="413" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597061294859" />
+    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2" timestamp="1597055976735">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="108" y="76" width="1782" height="1096" key="CommitChangelistDialog2/0.23.2048.1257@0.23.2048.1257" timestamp="1597048627222" />
-    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055946732" />
-    <state width="2006" height="356" key="GridCell.Tab.0.bottom" timestamp="1597053332229">
+    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055976735" />
+    <state width="2006" height="356" key="GridCell.Tab.0.bottom" timestamp="1597061870808">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state width="2006" height="356" key="GridCell.Tab.0.bottom/0.23.2048.1257@0.23.2048.1257" timestamp="1597053332229" />
-    <state width="2006" height="356" key="GridCell.Tab.0.center" timestamp="1597053332228">
+    <state width="2006" height="356" key="GridCell.Tab.0.bottom/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597061870808" />
+    <state width="2006" height="356" key="GridCell.Tab.0.center" timestamp="1597061870808">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state width="2006" height="356" key="GridCell.Tab.0.center/0.23.2048.1257@0.23.2048.1257" timestamp="1597053332228" />
-    <state width="2006" height="356" key="GridCell.Tab.0.left" timestamp="1597053332227">
+    <state width="2006" height="356" key="GridCell.Tab.0.center/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597061870808" />
+    <state width="2006" height="356" key="GridCell.Tab.0.left" timestamp="1597061870808">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state width="2006" height="356" key="GridCell.Tab.0.left/0.23.2048.1257@0.23.2048.1257" timestamp="1597053332227" />
-    <state width="2006" height="356" key="GridCell.Tab.0.right" timestamp="1597053332229">
+    <state width="2006" height="356" key="GridCell.Tab.0.left/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597061870808" />
+    <state width="2006" height="356" key="GridCell.Tab.0.right" timestamp="1597061870808">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state width="2006" height="356" key="GridCell.Tab.0.right/0.23.2048.1257@0.23.2048.1257" timestamp="1597053332229" />
-    <state x="757" y="384" key="NewPhpClassDialog" timestamp="1597048762123">
+    <state width="2006" height="356" key="GridCell.Tab.0.right/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597061870808" />
+    <state x="757" y="384" key="NewPhpClassDialog" timestamp="1597059976427">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="757" y="384" key="NewPhpClassDialog/0.23.2048.1257@0.23.2048.1257" timestamp="1597048762123" />
-    <state x="136" y="58" width="1751" height="1030" key="SettingsEditor" timestamp="1597055965709">
+    <state x="757" y="384" key="NewPhpClassDialog/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597059976427" />
+    <state x="136" y="58" width="1751" height="1030" key="SettingsEditor" timestamp="1597059601033">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="136" y="58" width="1761" height="1058" key="SettingsEditor/0.23.2048.1257@0.23.2048.1257" timestamp="1597049652924" />
-    <state x="136" y="58" width="1751" height="1030" key="SettingsEditor/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055965709" />
+    <state x="136" y="58" width="1751" height="1030" key="SettingsEditor/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597059601033" />
     <state x="822" y="572" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597047399206">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
@@ -181,13 +209,14 @@
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="802" y="470" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055133652" />
-    <state x="689" y="306" width="670" height="675" key="run.anything.popup" timestamp="1597053327399">
+    <state x="689" y="306" width="670" height="675" key="run.anything.popup" timestamp="1597061815207">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="689" y="306" width="670" height="675" key="run.anything.popup/0.23.2048.1257@0.23.2048.1257" timestamp="1597053327399" />
-    <state x="689" y="308" width="670" height="676" key="search.everywhere.popup" timestamp="1597054307901">
+    <state x="689" y="306" width="670" height="675" key="run.anything.popup/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597061815207" />
+    <state x="689" y="308" width="670" height="676" key="search.everywhere.popup" timestamp="1597062510874">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
-    <state x="689" y="308" width="670" height="676" key="search.everywhere.popup/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597054307901" />
+    <state x="689" y="308" width="670" height="676" key="search.everywhere.popup/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597062510874" />
   </component>
 </project>
