@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="mt-5">Read once - new message created</h1>
+    <p>Go back: <a href="{{ path('index') }}">Description</a>.</p>
+    <p class="lead">
+        Here is link to message: <code>{{ url('readMessage', {'messageUuid': uuid}) }}</code>. Remember it work only once!
+    </p>
+{% endblock %}

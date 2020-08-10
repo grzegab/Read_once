@@ -3,9 +3,7 @@
 {% block body %}
     <h1 class="mt-5">Read once this message</h1>
     <p class="lead">
-        This is a message that will appear only once. This message is already deleted.
+        Error: <code>{{ message }}</code>
     </p>
-    <p>Take a good look:</p>
-    <p><code>{{ content }}</code></p>
     <p>Create one now: <a href="{{ path('createMessage') }}">NEW MESSAGE</a> if you want to test it.</p>
 {% endblock %}
