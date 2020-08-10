@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="feat(master): add main controller for app with tests">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Controller/Main.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/Main/create.html.twig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/Main/description.html.twig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/Main/read.html.twig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Controller/MainTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Read_once.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Read_once.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
@@ -23,9 +24,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" loadUpdateAvailability="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <interpreter name="once_composer" composer="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,7 +61,7 @@
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Main" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -91,7 +94,7 @@
       <updated>1597040350976</updated>
       <workItem from="1597040352786" duration="2026000" />
       <workItem from="1597042400784" duration="273000" />
-      <workItem from="1597042700236" duration="11912000" />
+      <workItem from="1597042700236" duration="12389000" />
     </task>
     <task id="LOCAL-00001" summary="build(master): updated symfony to 4.4 and added docker compose">
       <created>1597048627495</created>
@@ -100,7 +103,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597048627495</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(master): add project description in README file">
+      <created>1597055597658</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597055597658</updated>
+    </task>
+    <task id="LOCAL-00003" summary="build(master): add phpstorm data">
+      <created>1597055625321</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1597055625321</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,21 +125,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="build(master): updated symfony to 4.4 and added docker compose" />
-    <option name="LAST_COMMIT_MESSAGE" value="build(master): updated symfony to 4.4 and added docker compose" />
+    <MESSAGE value="feat(master): add project description in README file" />
+    <MESSAGE value="build(master): add phpstorm data" />
+    <MESSAGE value="feat(master): add main controller for app with tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(master): add main controller for app with tests" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="604" y="249" key="#CLI_Interpreters" timestamp="1597055103957">
+    <state x="604" y="249" key="#CLI_Interpreters" timestamp="1597055907932">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
-    <state x="604" y="249" key="#CLI_Interpreters/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055103957" />
+    <state x="604" y="249" key="#CLI_Interpreters/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055907932" />
     <state x="373" y="488" key="#SQL_Dialects" timestamp="1597045066708">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="373" y="488" key="#SQL_Dialects/0.23.2048.1257@0.23.2048.1257" timestamp="1597045066708" />
-    <state x="108" y="76" width="1782" height="1096" key="CommitChangelistDialog2" timestamp="1597048627222">
+    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2" timestamp="1597055946732">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="108" y="76" width="1782" height="1096" key="CommitChangelistDialog2/0.23.2048.1257@0.23.2048.1257" timestamp="1597048627222" />
+    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055946732" />
     <state width="2006" height="356" key="GridCell.Tab.0.bottom" timestamp="1597053332229">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
@@ -143,11 +164,11 @@
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="757" y="384" key="NewPhpClassDialog/0.23.2048.1257@0.23.2048.1257" timestamp="1597048762123" />
-    <state x="136" y="58" width="1761" height="1058" key="SettingsEditor" timestamp="1597055137702">
+    <state x="136" y="58" width="1751" height="1030" key="SettingsEditor" timestamp="1597055965709">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="136" y="58" width="1761" height="1058" key="SettingsEditor/0.23.2048.1257@0.23.2048.1257" timestamp="1597049652924" />
-    <state x="136" y="58" key="SettingsEditor/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055137702" />
+    <state x="136" y="58" width="1751" height="1030" key="SettingsEditor/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597055965709" />
     <state x="822" y="572" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597047399206">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>

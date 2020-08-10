@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="mt-5">Read once this message</h1>
+    <p class="lead">
+        This is a message that will appear only once. Take a good look:
+    </p>
+    <p>Message content.</p>
+    <p>Create one now: <a href="{{ path('createMessage') }}">NEW MESSAGE</a> if you want to test it.</p>
+{% endblock %}

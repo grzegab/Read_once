@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="mt-5">Read once</h1>
+    <p class="lead">
+        This is a sample app for creating messages that can be rad only once.
+    </p>
+    <p>Create one now: <a href="{{ path('createMessage') }}">NEW MESSAGE</a> if you want to test it.</p>
+{% endblock %}
