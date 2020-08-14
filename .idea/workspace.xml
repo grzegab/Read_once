@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="" />
+    <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docker-compose-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,8 +156,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/Main" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/templates/Main" />
       <recent name="$PROJECT_DIR$/docker/postgres" />
       <recent name="$PROJECT_DIR$/docker/php" />
       <recent name="$PROJECT_DIR$/docker/nginx" />
@@ -187,7 +191,8 @@
       <workItem from="1597042400784" duration="273000" />
       <workItem from="1597042700236" duration="22645000" />
       <workItem from="1597164493852" duration="1282000" />
-      <workItem from="1597301974250" duration="622000" />
+      <workItem from="1597301974250" duration="1493000" />
+      <workItem from="1597396144265" duration="1063000" />
     </task>
     <task id="LOCAL-00001" summary="build(master): updated symfony to 4.4 and added docker compose">
       <created>1597048627495</created>
