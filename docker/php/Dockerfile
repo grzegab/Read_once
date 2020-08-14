@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y apt-transport-https git-all wget \
 
 RUN pecl install xdebug-2.9.2
 RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
-RUN docker-php-ext-install -j$(nproc) pdo pdo_pgsql pgsql soap gd intl opcache
+RUN docker-php-ext-install -j$(nproc) pgsql soap gd intl opcache
+RUN docker-php-ext-install pdo pdo_pgsql pgsql pdo_mysql
 RUN docker-php-ext-enable intl opcache xdebug
 
 # Override with custom opcache settings
