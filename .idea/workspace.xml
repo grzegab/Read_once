@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/php/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/php/php-additional.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/php/xdebug.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/postgres/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/postgres/initdb.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +200,7 @@
       <workItem from="1597042700236" duration="22645000" />
       <workItem from="1597164493852" duration="1282000" />
       <workItem from="1597301974250" duration="1493000" />
-      <workItem from="1597396144265" duration="4088000" />
+      <workItem from="1597396144265" duration="6154000" />
     </task>
     <task id="LOCAL-00001" summary="build(master): updated symfony to 4.4 and added docker compose">
       <created>1597048627495</created>
@@ -337,6 +346,14 @@
     </state>
     <state width="2006" height="356" key="GridCell.Tab.0.right/0.23.2048.1257@0.23.2048.1257" timestamp="1597081384411" />
     <state width="2006" height="356" key="GridCell.Tab.0.right/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597066363311" />
+    <state x="205" y="138" key="MergeDialog" timestamp="1597401423080">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="205" y="138" key="MergeDialog/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597401423080" />
+    <state x="662" y="420" key="MultipleFileMergeDialog" timestamp="1597401423109">
+      <screen x="0" y="23" width="2048" height="1257" />
+    </state>
+    <state x="662" y="420" key="MultipleFileMergeDialog/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597401423109" />
     <state x="757" y="384" key="NewPhpClassDialog" timestamp="1597059976427">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
