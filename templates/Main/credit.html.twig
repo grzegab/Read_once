@@ -1,17 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h5>read only once</h5>
+    <h5>credits</h5>
     <h5>------------------</h5>
     <p class="lead">
-        <code>{{ content }}</code>
+        This is a sample app. It is a demo showing what can be done to keep some messages private.
+        It should be kept as simple as possible.
     </p>
     <p class="lead">
-        This message is already deleted.
+        Created by GrzeGab.
     </p>
-    <div class="menu">
+    <div class="menu mt-5">
         <ol>
             <li><a href="{{ path('index') }}">Go to start screen ...</a><span id="cursor">&nbsp;</span></li>
         </ol>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
 {% endblock %}

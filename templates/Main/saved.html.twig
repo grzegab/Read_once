@@ -1,9 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="mt-5">Read once - new message created</h1>
-    <p>Go back: <a href="{{ path('index') }}">Description</a>.</p>
+    <h5>message created</h5>
+    <h5>---------------</h5>
     <p class="lead">
-        Here is link to message: <code>{{ url('readMessage', {'messageUuid': uuid}) }}</code>. Remember it work only once!
+        URL: <code>{{ url('readMessage', {'messageUuid': uuid}) }}</code>
     </p>
+    <p class="lead">
+        ID: <code>{{ uuid }}</code>
+    </p>
+    <p class="lead">
+        Remember it work only once!
+    </p>
+    <div class="menu">
+        <ol>
+            <li><a href="{{ url('statusMessage', {'messageUuid': uuid}) }}" class="message_form_submit">Check msg
+                    status ...</a></li>
+            <li><a href="{{ path('index') }}">Go to start screen ...</a><span id="cursor">&nbsp;</span></li>
+        </ol>
+    </div>
 {% endblock %}

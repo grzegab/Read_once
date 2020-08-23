@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/nginx.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/php/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/php/php-additional.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/php/xdebug.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/postgres/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/postgres/initdb.sql" beforeDir="false" />
-    </list>
+    <list default="true" id="bce2d346-a028-4da5-ba9e-934e049c9256" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,7 +188,7 @@
       <workItem from="1597042700236" duration="22645000" />
       <workItem from="1597164493852" duration="1282000" />
       <workItem from="1597301974250" duration="1493000" />
-      <workItem from="1597396144265" duration="6154000" />
+      <workItem from="1597396144265" duration="6208000" />
     </task>
     <task id="LOCAL-00001" summary="build(master): updated symfony to 4.4 and added docker compose">
       <created>1597048627495</created>
@@ -279,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597397389526</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="build(master): remove docker files">
+      <created>1597474346684</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1597474346684</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +293,8 @@
     <MESSAGE value="feat(master): add view and exceptions" />
     <MESSAGE value="build(master): update phpstorm data" />
     <MESSAGE value="build(master): add prod" />
-    <option name="LAST_COMMIT_MESSAGE" value="build(master): add prod" />
+    <MESSAGE value="build(master): remove docker files" />
+    <option name="LAST_COMMIT_MESSAGE" value="build(master): remove docker files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="604" y="249" key="#CLI_Interpreters" timestamp="1597055907932">
@@ -321,11 +317,11 @@
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="762" y="413" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597065717787" />
-    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2" timestamp="1597397389423">
+    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2" timestamp="1597474346553">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>
     <state x="108" y="76" width="1782" height="1096" key="CommitChangelistDialog2/0.23.2048.1257@0.23.2048.1257" timestamp="1597081344436" />
-    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597397389423" />
+    <state x="108" y="76" width="1630" height="1047" key="CommitChangelistDialog2/2048.23.2560.1417/0.23.2048.1257@0.23.2048.1257" timestamp="1597474346553" />
     <state width="2006" height="356" key="GridCell.Tab.0.bottom" timestamp="1597081384412">
       <screen x="0" y="23" width="2048" height="1257" />
     </state>

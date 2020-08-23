@@ -16,6 +16,3 @@ To stop this app:
 `docker-compose down`
 
 By default, app start running on `http://localhost:8087`.
-
-## Unit testing
-The app was created with TDD. To run tests: `docker-compose run --rm once_composer ./bin/phpunit`.

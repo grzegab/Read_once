@@ -1,0 +1,23 @@
+@import "variables";
+
+@keyframes blinker {
+  30% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.9;
+  }
+}
+
+#cursor {
+  width: 1em;
+  height: 2em;
+  background-color: $green;
+  animation: blinker 1s linear infinite;
+}

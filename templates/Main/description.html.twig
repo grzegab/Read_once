@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="mt-5">Read once</h1>
-    <p class="lead">
-        This is a sample app for creating messages that can be rad only once.
-    </p>
-    <p>Create one now: <a href="{{ path('createMessage') }}">NEW MESSAGE</a> if you want to test it.</p>
+    <h5>menu</h5>
+    <h5>----</h5>
+    <div class="menu">
+        <ol>
+            <li><a href="{{ path('createMessage') }}">Create new message ...</a></li>
+            <li><a href="{{ path('verifyMessage') }}">Verify message by ID ...</a></li>
+            <li><a href="{{ path('credits') }}">Credits ...</a><span id="cursor">&nbsp;</span></li>
+        </ol>
+    </div>
 {% endblock %}

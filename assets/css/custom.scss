@@ -1,0 +1,49 @@
+@import "variables";
+
+body {
+  background-color: $blackish;
+  color: $white;
+}
+
+textarea, input[type="text"] {
+  width: 100%;
+  background-color: $black;
+  border: 1px solid $white;
+  color: $green;
+}
+
+textarea {
+  min-height: 5em;
+}
+
+.terminal-box {
+  color: $green;
+  background-color: $black;
+  padding: 2em;
+  font-family: "Source Code Pro", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  border: 2.1em solid $white;
+  box-shadow: 10px 20px 30px 5px $black;
+
+  h1 {
+    word-spacing: 1em;
+    letter-spacing: 0.4em;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+  }
+
+  .menu {
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: $black;
+        background-color: $green;
+      }
+    }
+  }
+}
