@@ -6,9 +6,9 @@ namespace App\Controller;
 
 use App\Entity\Message;
 use App\Forms\MessageForm;
+use App\Forms\VerifyForm;
 use App\Repository\MessageRepository;
 use RuntimeException;
-use LogicException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
@@ -95,10 +95,10 @@ class Main extends AbstractController
 
         try {
             /*
-             * If uuid is not valid - return 404.
+             * If uuid is not valid - return 500.
              */
-            if (!preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/', $messageUuid)) {
-                throw new LogicException('Not uuid');
+            if (!$this->messageRepository->validateUuid($messageUuid)) {
+                throw new RuntimeException('Broken message ID.');
             }
 
             /** @var Message|null $message */
@@ -107,8 +107,15 @@ class Main extends AbstractController
             /*
              * If message is not found or read - return 404
              */
-            if ($message === null || $message->isRead()) {
-                throw new RuntimeException('Not found');
+            if ($message === null) {
+                throw new RuntimeException('Message does not exists.');
+            }
+
+            /*
+             * If message is read - return 500
+             */
+            if ($message->isRead()) {
+                throw new RuntimeException('Message already read.');
             }
 
             /*
@@ -123,14 +130,86 @@ class Main extends AbstractController
             $message->setRead(true);
             $message->setContent('deleted');
             $this->messageRepository->save($message);
-        } catch (LogicException $e) {
-            $response->setContent($e->getMessage());
-            $response->setStatusCode(Response::HTTP_BAD_REQUEST);
-        } catch (RuntimeException $e) {
-            $error404 = $this->twig->render('Errors/404.html.twig', ['message' => $e->getMessage()]);
-            $response->setContent($error404);
-            $response->setStatusCode(Response::HTTP_NOT_FOUND);
-        } catch (LoaderError|RuntimeError|SyntaxError $e) {
+        } catch (RuntimeException | LoaderError | RuntimeError | SyntaxError $e) {
+            $error500 = $this->twig->render('Errors/500.html.twig', ['message' => $e->getMessage()]);
+            $response->setContent($error500);
+            $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        return $response;
+    }
+
+    public function statusMessage($messageUuid): Response
+    {
+        $response = new Response();
+
+        try {
+            /*
+             * Check if uuid is valid
+             */
+            if (!$this->messageRepository->validateUuid($messageUuid)) {
+                throw new RuntimeException('Broken message ID.');
+            }
+
+            /*
+             * Check is message is valid
+             */
+            $isValid = $this->messageRepository->checkMessageRead($messageUuid);
+
+            $html = $this->twig->render('Main/status.html.twig', ['messageValid' => $isValid]);
+            $response->setContent($html);
+        } catch (RuntimeException | LoaderError | RuntimeError | SyntaxError $exception) {
+            $error500 = $this->twig->render('Errors/500.html.twig', ['message' => $exception->getMessage()]);
+            $response->setContent($error500);
+            $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        return $response;
+    }
+
+    public function credits(): Response
+    {
+        $response = new Response();
+        try {
+            $html = $this->twig->render('Main/credit.html.twig');
+            $response->setContent($html);
+        } catch (LoaderError | RuntimeError | SyntaxError $exception) {
+            $error500 = $this->twig->render('Errors/500.html.twig', ['message' => $exception->getMessage()]);
+            $response->setContent($error500);
+            $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        return $response;
+    }
+
+    public function verifyMessage(Request $request): Response
+    {
+        $response = new Response();
+
+        try {
+            $form = $this->createForm(VerifyForm::class);
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $message = $form->getData();
+                /*
+                 * Check if uuid is valid
+                 */
+                if (!$this->messageRepository->validateUuid($message['uuid'])) {
+                    throw new RuntimeException('Broken message ID.');
+                }
+                $isValid = $this->messageRepository->checkMessageRead($message['uuid']);
+
+
+                $html = $this->twig->render('Main/status.html.twig', ['messageValid' => $isValid]);
+                $response->setContent($html);
+            } else { /* Render default page with form */
+                $html = $this->twig->render('Main/verify.html.twig', ['form' => $form->createView()]);
+                $response->setContent($html);
+            }
+        } catch (LoaderError | RuntimeError | SyntaxError | RuntimeException $exception) {
+            $error500 = $this->twig->render('Errors/500.html.twig', ['message' => $exception->getMessage()]);
+            $response->setContent($error500);
             $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
